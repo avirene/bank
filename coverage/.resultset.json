@@ -1,0 +1,51 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/student/Projects/bank/spec/account_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Projects/bank/lib/account.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1597075691
+  }
+}
