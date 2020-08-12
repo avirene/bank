@@ -1,5 +1,3 @@
-require_relative "printer.rb"
-
 class Account
 
   attr_reader :balance, :transaction, :transactions, :statement_header, :balance_header
@@ -9,7 +7,7 @@ class Account
     @balance = 0
     @transaction = []
     @statement_header = "date || credit || debit || balance"
-    @balance_header = "Current Balance: "
+    @balance_header = "Current Balance: £"
   end
 
   def make_deposit(credit)
@@ -32,6 +30,10 @@ class Account
     @transactions.each do |transaction|
       puts transaction[0].strftime("%d/%m/%Y") + " || " + transaction[1].to_s + " || " + transaction[2].to_s + " || " + transaction[3].to_s
     end
+  end
+
+  def print_balance
+    puts @balance_header + "%0.2f" % [@balance]
   end
 
 end
