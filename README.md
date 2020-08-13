@@ -1,32 +1,79 @@
-# bank
+# Bank tech test
+
+In this Ruby project I practiced doing a tech test, my OO design and TDD skills.
+
+## Specification
+
+* You can interact with the code via a REPL like IRB or pry.  (I wasn't asked to implement a command line interface that takes input from STDIN.)
+* You can make deposits, withdrawal.
+* You can print account statement (date, amount, balance).
+* Data is kept in memory (I wasn't asked to store it to a database).
+
+**Given** a client makes a deposit of 1000 on 10-01-2012  
+**And** a deposit of 2000 on 13-01-2012  
+**And** a withdrawal of 500 on 14-01-2012  
+**When** she prints her bank statement  
+**Then** she would see
 
 ```
-As a client
-So that I could keep money on my account
-I would like to be able to make a deposit.
-
-As a client
-So that I could take money from my account
-I would like to be able to make a withdrawal.
-
-As a client
-So that I could see the balance on my account
-I would like to be able to print my bank statement.
-
-As a client
-So that I could keep track of my transactions
-I would like my bank statement to contain the date and amount of each transaction as well as the balance.
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
 ```
-# to run the code
+**Given** a client makes a deposit of 1000 on 10-01-2012  
+**And** a deposit of 2000 on 13-01-2012  
+**And** a withdrawal of 500 on 14-01-2012  
+**When** she prints her bank balance  
+**Then** she would see
+
+```
+Current Balance: £2500.00
+```
+[![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco)
+
+## to install gems
 ```
 $ bundle install
 ```
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop-hq/rubocop)
 
-# to run tests
-```
-$ rspec
-```
-# to run linter
+## to run linter
 ```
 $ rubocop
 ```
+
+## to run tests
+```
+$ rspec
+```
+## to run the code in pry
+```
+$ pry
+```
+
+```
+require "./lib/account.rb"
+```
+```
+account = Account.new
+```
+```
+account.make_deposit(2000)
+```
+```
+account.make_withdrawal(500)
+```
+```
+account.print_statement
+```
+```
+account.print_balance
+```
+
+## to exit pry
+```
+exit
+```
+
+MIT © [Iryna Audzei]()
