@@ -30,7 +30,6 @@ date || credit || debit || balance
 ```
 Current Balance: £2500.00
 ```
-[![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco)
 
 ## to install gems
 ```
