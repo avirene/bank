@@ -1,7 +1,7 @@
+
 require "account.rb"
 
 describe Account do
-  
   describe ".make_deposit" do
     it "allows to deposit money on the account" do
       account = Account.new
@@ -18,5 +18,4 @@ describe Account do
       expect(account.balance).to eq(500.00)
     end
   end
-
 end

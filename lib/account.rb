@@ -1,3 +1,4 @@
+
 class Account
 
   attr_reader :balance, :transaction, :transactions, :statement_header, :balance_header
@@ -35,5 +36,4 @@ class Account
   def print_balance
     puts @balance_header + "%0.2f" % [@balance]
   end
-
 end
