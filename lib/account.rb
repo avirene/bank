@@ -1,7 +1,8 @@
 # require_relative "transaction"
 class Account
 
-  # attr_reader :balance, :transaction, :transactions, :statement_header, :balance_header
+  attr_reader :balance
+  # :transaction, :transactions, :statement_header, :balance_header
 
   def initialize
     @transactions = []
