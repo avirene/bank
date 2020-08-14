@@ -1,14 +1,13 @@
-
+# require_relative "transaction"
 class Account
 
-  attr_reader :balance, :transaction, :transactions, :statement_header, :balance_header
+  # attr_reader :balance, :transaction, :transactions, :statement_header, :balance_header
 
   def initialize
     @transactions = []
     @balance = 0
     @transaction = []
-    @statement_header = "date || credit || debit || balance"
-    @balance_header = "Current Balance: £"
+    # @transaction = Transaction.new
   end
 
   def make_deposit(credit)
@@ -26,14 +25,14 @@ class Account
   end
 
   def print_statement
-    @transactions.reverse!
-    puts @statement_header
-    @transactions.each do |transaction|
+    reversed_transactions = @transactions.reverse
+    puts "date || credit || debit || balance"
+    reversed_transactions.each do |transaction|
       puts transaction[0].strftime("%d/%m/%Y") + " || " + transaction[1].to_s + " || " + transaction[2].to_s + " || " + transaction[3].to_s
     end
   end
 
   def print_balance
-    puts @balance_header + "%0.2f" % [@balance]
+    puts "Current Balance: £" + "%0.2f" % [@balance]
   end
 end
