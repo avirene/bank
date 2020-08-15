@@ -1,32 +1,27 @@
-# require_relative "transaction"
+require_relative "transaction_log"
 class Account
 
-  attr_reader :balance
-  # :transaction, :transactions, :statement_header, :balance_header
+  attr_reader :balance, :transaction_log, :credit, :debit
 
   def initialize
-    @transactions = []
     @balance = 0
-    @transaction = []
-    # @transaction = Transaction.new
+    @transaction_log = TransactionLog.new
   end
 
   def make_deposit(credit)
+    @credit = credit
     @balance += credit
-    @transaction << Time.new << " " << "%0.2f" % [credit] << "%0.2f" % [@balance]
-    @transactions << @transaction
-    @transaction = []
+    @transaction_log.log_deposit(self)
   end
 
   def make_withdrawal(debit)
+    @debit = debit
     @balance -= debit
-    @transaction << Time.new << "%0.2f" % [debit] << " " << "%0.2f" % [@balance]
-    @transactions << @transaction
-    @transaction = []
+    @transaction_log.log_withdrawal(self)
   end
 
   def print_statement
-    reversed_transactions = @transactions.reverse
+    reversed_transactions = @transaction_log.transactions.reverse
     puts "date || credit || debit || balance"
     reversed_transactions.each do |transaction|
       puts transaction[0].strftime("%d/%m/%Y") + " || " + transaction[1].to_s + " || " + transaction[2].to_s + " || " + transaction[3].to_s
