@@ -4,7 +4,7 @@ class Account
   attr_reader :balance, :transaction_log, :credit, :debit
 
   def initialize
-    @balance = 0
+    @balance = 0 
     @transaction_log = TransactionLog.new
   end
 

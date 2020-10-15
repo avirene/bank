@@ -31,6 +31,8 @@ date || credit || debit || balance
 Current Balance: £2500.00
 ```
 
+## Domain Model
+
 ## to install gems
 ```
 $ bundle install
