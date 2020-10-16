@@ -32,6 +32,7 @@ Current Balance: £2500.00
 ```
 
 ## Domain Model
+![Bank domain model](./public/images/bank_diagram.png)
 
 ## to install gems
 ```
