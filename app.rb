@@ -1,5 +1,5 @@
 require "sinatra/base"
-require ".lib/account"
+require "./lib/account.rb"
 
 class Bank < Sinatra::Base
   enable :sessions
@@ -11,7 +11,12 @@ class Bank < Sinatra::Base
   end
 
   post "/account" do
-    @account = Account.new
+    session[:account] = Account.new
     redirect "/account"
+  end
+
+  get "/account" do
+    @account = session[:account]
+    erb :account
   end
 end
