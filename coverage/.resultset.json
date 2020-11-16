@@ -21,8 +21,8 @@
           null,
           null,
           1,
-          2,
-          2,
+          1,
+          1,
           null,
           null
         ]
@@ -139,12 +139,12 @@
       },
       "/Users/irynaaudzei/Projects/bank/spec/features/select_action_spec.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          1,
-          0,
-          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -160,6 +160,6 @@
         ]
       }
     },
-    "timestamp": 1605181816
+    "timestamp": 1605536055
   }
 }
